@@ -1,7 +1,6 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from 'react';
-import ExpensesFilter from "./components/Expenses/ExpenseFilter/ExpensesFilter";
 
 function App() {
 
@@ -16,7 +15,7 @@ function App() {
       id: 'e2',
       title: 'New TV',
       amount: 799.49,
-      date: new Date(2021, 2, 12)
+      date: new Date(2022, 2, 12)
     },
     {
       id: 'e3',
@@ -32,20 +31,13 @@ function App() {
     }
   ]);
 
-  const [selectedYear, setSelectedYear] = useState('');
-
   const newExpenseHandler = (userInput) => {
     setExpenses([...expenses, { ...userInput, id: Math.random() }]);
-  }
-
-  const filterExpenseHandler = (selectedYear) => {
-    setSelectedYear(selectedYear);
   }
 
   return (
     <div>
       <NewExpense onNewExpense={newExpenseHandler} />
-      <ExpensesFilter onFilterExpense={filterExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );

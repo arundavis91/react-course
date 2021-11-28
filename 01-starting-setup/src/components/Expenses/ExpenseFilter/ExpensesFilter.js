@@ -3,7 +3,7 @@ import React from 'react';
 import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
-    const onFilterExpenseEventHandler = (event) => { props.onFilterExpense(event.target.value); }
+    const onFilterExpenseEventHandler = props.onFilterExpense;
 
     return (
         <div className='expenses-filter' >
